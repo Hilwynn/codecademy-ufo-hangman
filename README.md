@@ -1,3 +1,3 @@
 # codecademy-ufo-hangman
 
-Compile with g++ -std=c++11 hangman.cpp functions.cpp
+__Note to self:__ Compile with `g++ -std=c++11 hangman.cpp functions.cpp` on Mac
