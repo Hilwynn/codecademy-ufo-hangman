@@ -1,69 +1,31 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include "functions.hpp"
+#include "play_game.hpp"
 
 int main()
 {
 
-  srand(time(NULL));
+  bool exit_game = false;
 
-  std::string codeword;
-  std::string answer;
-  std::vector<std::string> possible_codewords = {"midsummer", "unnecessary", "practicality", "kaleidoscope", "cinematography", "enigmatic"};
-
-  codeword = possible_codewords[(rand() % possible_codewords.size())];
-
-  for (int i = 0; i < codeword.length(); i++)
-  {
-    answer += "_";
-  }
-
-  greet();
-
-  int misses = 0;
-  std::vector<char> incorrect;
-  bool guess = false;
-
-  char letter;
-
-  while (answer != codeword && misses < 7)
+  while (!exit_game)
   {
 
-    display_misses(misses);
+    play_game();
 
-    display_status(incorrect, answer);
+    char rematch;
 
-    std::cout << "\n\nPlease enter your guess: ";
+    std::cout << "\n\nWould you like to play again? (y/n) ";
+    std::cin >> rematch;
 
-    std::cin >> letter;
-
-    for (int i = 0; i < codeword.length(); i++)
+    while (rematch != 'y' && rematch != 'n')
     {
-
-      if (letter == codeword[i])
-      {
-
-        answer[i] = letter;
-        guess = true;
-      }
+      std::cout << "\nPlease enter a valid option.\n";
+      std::cout << "Would you like to play again? (y/n) ";
+      std::cin >> rematch;
     }
 
-    if (guess)
+    if (rematch == 'n')
     {
-
-      std::cout << "\nCorrect!\n";
+      exit_game = true;
     }
-    else
-    {
-
-      std::cout << "\nIncorrect! The tractor beam pulls the person in further.\n";
-      incorrect.push_back(letter);
-      misses++;
-    }
-
-    guess = false;
   }
-
-  end_game(answer, codeword);
 }
