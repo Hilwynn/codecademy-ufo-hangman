@@ -1,13 +1,25 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "functions.hpp"
 
 int main()
 {
 
-  greet();
+  srand(time(NULL));
 
-  std::string codeword = "codecademy";
-  std::string answer = "__________";
+  std::string codeword;
+  std::string answer;
+  std::vector<std::string> possible_codewords = {"midsummer", "unnecessary", "practicality", "kaleidoscope", "cinematography", "enigmatic"};
+
+  codeword = possible_codewords[(rand() % possible_codewords.size())];
+
+  for (int i = 0; i < codeword.length(); i++)
+  {
+    answer += "_";
+  }
+
+  greet();
 
   int misses = 0;
   std::vector<char> incorrect;
