@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <cctype>
 #include "functions.hpp"
 
 void play_game()
@@ -40,10 +41,10 @@ void play_game()
     for (int i = 0; i < codeword.length(); i++)
     {
 
-      if (letter == codeword[i])
+      if (tolower(letter) == codeword[i])
       {
 
-        answer[i] = letter;
+        answer[i] = tolower(letter);
         guess = true;
       }
     }
@@ -57,7 +58,7 @@ void play_game()
     {
 
       std::cout << "\nIncorrect! The tractor beam pulls the person in further.\n";
-      incorrect.push_back(letter);
+      incorrect.push_back(toupper(letter));
       misses++;
     }
 
