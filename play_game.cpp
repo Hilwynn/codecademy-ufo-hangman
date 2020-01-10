@@ -11,7 +11,24 @@ void play_game()
 
   std::string codeword;
   std::string answer;
-  std::vector<std::string> possible_codewords = {"midsummer", "unnecessary", "practicality", "kaleidoscope", "cinematography", "enigmatic"};
+  std::vector<std::string> possible_codewords = {
+      "midsummer",
+      "unnecessary",
+      "practicality",
+      "kaleidoscope",
+      "cinematography",
+      "enigmatic",
+      "phosphorous",
+      "negotiation",
+      "phalanx",
+      "neanderthal",
+      "osteoporosis",
+      "concatenation",
+      "avarice",
+      "benevolence",
+      "machiavellian",
+
+  };
 
   codeword = possible_codewords[(rand() % possible_codewords.size())];
 
