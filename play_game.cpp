@@ -69,7 +69,7 @@ void play_game()
     if (guess)
     {
 
-      std::cout << "\nCorrect! The word was \"" << codeword << "\".\n";
+      std::cout << "\nCorrect!\n";
     }
     else
     {
