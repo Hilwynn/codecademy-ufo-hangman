@@ -165,5 +165,6 @@ void end_game(std::string answer, std::string codeword)
   {
 
     std::cout << "Oh no! The UFO just flew away with another person!\n";
+    std::cout << "The correct word was \"" << codeword << "\".\n";
   }
 }
