@@ -4,6 +4,7 @@
 void greet()
 {
 
+  std::cout << "\n\n";
   std::cout << "=============\n";
   std::cout << "UFO: The Game\n";
   std::cout << "=============\n";
